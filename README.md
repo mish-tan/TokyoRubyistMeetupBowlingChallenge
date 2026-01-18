@@ -1,15 +1,16 @@
 # 10 Pin Bowling Challenge 🏆
 
+```
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ 1 │ 4 │ 4 │ 5 │ 6 │ / │ 5 │ / │   │ * │ 0 │ 1 │ 7 │ / │ 6 │ / │   │ * │ 2 │ / │ 6 │
+│   │ X │ 7 │ / │ 9 │ - │   │ X │ - │ 8 │ 8 │ / │   │ - │ 7 │ 2 │   │ X │ X │ 8 │ 1 │
 │   └───┤   └───┤   └───┤   └───┤   └───┤   └───┤   └───┤   └───┤   └───┤   └───┴───┤
-│   5   │   14  │  29   │  49   │  60   │   61  │   77  │   97  │  117  │    133    │
+│   20  │   39  │   48  │   66  │   74  │   84  │   84  │   93  │  121  │    140    │
 └───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────────┘
 
-/ marks a Spare and * marks a Strike
+/ marks a Spare and X marks a Strike
+```
 
-This repo is for the coding challenge for TokyoRubyistMeetup: Parse
-a 10-pin bowling scorecard.
+This repo is for the coding challenge for TokyoRubyistMeetup: **Parse a 10-pin bowling scorecard.**
 
 - **Easy**: Sum total pins knocked down.
 - **Challenge**: Full official score with strikes (X), spares (/), opens, and 10th-frame bonuses.
