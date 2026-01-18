@@ -37,7 +37,7 @@ Branches:
 1. **Clone the repo**:
 
    ```
-   git clone https://github.com/mish-tan/TokyoPythonBowlingChallenge.git
+   git clone https://github.com/mish-tan/TokyoRubyistMeetupBowlingChallenge.git
    ```
 
 2. **Install dependencies: Make sure you have Ruby installed, then run:**
