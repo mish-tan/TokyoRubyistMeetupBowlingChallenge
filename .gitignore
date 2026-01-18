@@ -1,0 +1,22 @@
+# Dependency directories (Bundler installs gems here if configured)
+/vendor/bundle/
+/bundle/
+/bin/
+
+# Testing and coverage
+/coverage/
+/spec/reports/
+
+# Environment and local secrets
+.env
+.env.local
+
+# IDE and System files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Temporary files
+/tmp/
+/log/
