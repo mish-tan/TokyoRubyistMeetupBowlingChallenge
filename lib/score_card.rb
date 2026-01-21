@@ -9,8 +9,8 @@ class ScoreCard
   #   Representing the score of the game.
   #
   # Possible frame scores:
-  #   "X": strike (10 + following 2 rolls, unless 10th frame then 10)
-  #   "i/": spare (10 + following roll, unless 10th frame then 10)
+  #   "X": strike (10 + following 2 rolls)
+  #   "i/": spare (10 + following roll)
   #   "ij": open frame (i+j)
   #   "-": gutter ball(s) (0)
   #
