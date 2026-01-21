@@ -10,8 +10,8 @@ class ScoreCard
   #
   # Possible frame scores:
   #   "X": strike
-  #   "i/": spare
-  #   "ij": open frame
+  #   "i/": spare (e.g. 5/)
+  #   "ij": open frame (e.g. 54)
   #   "-": gutter ball(s)
   #
   # Example input:

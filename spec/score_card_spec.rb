@@ -11,8 +11,7 @@ RSpec.describe ScoreCard do
     end
 
     it "returns 110 when all spares and bonus roll is a strike" do
-      card = "-/ 1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/ X"
-      expect(described_class.pins_knocked_over(card)).to eq(110)
+      expect(described_class.pins_knocked_over("-/ 1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/X")).to eq(110)
     end
 
     it "returns 0 when all gutters indicated by single dash" do
@@ -31,20 +30,20 @@ RSpec.describe ScoreCard do
       expect(described_class.pins_knocked_over("9- 81 72 63 54 45 36 27 18 -9")).to eq(90)
     end
 
-    it "returns 65 when open frames and bonus roll" do
-      expect(described_class.pins_knocked_over("11 21 31 41 51 61 71 81 91 9/X")).to eq(65)
+    it "returns 74 when open frames and bonus roll" do
+      expect(described_class.pins_knocked_over("11 21 31 41 51 61 71 81 9/ 9/X")).to eq(74)
     end
 
     it "returns 95 when the example game" do
       expect(described_class.pins_knocked_over("X 7/ 9- X -8 8/ - 72 X X81")).to eq(95)
     end
 
-    it "returns 96 when the last roll is a spare" do
+    it "returns 96 when the example game and the last roll is a spare" do
       expect(described_class.pins_knocked_over("X 7/ 9- X -8 8/ - 72 X X8/")).to eq(96)
     end
 
-    it "returns 97 when the last frame contains a spare" do
-      expect(described_class.pins_knocked_over("X 7/ 9- X -8 8/ - 72 X 8/1")).to eq(97)
+    it "returns 87 when the last frame contains a spare" do
+      expect(described_class.pins_knocked_over("X 7/ 9- X -8 8/ - 72 X 8/1")).to eq(87)
     end
   end
 end
