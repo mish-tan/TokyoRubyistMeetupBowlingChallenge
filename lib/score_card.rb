@@ -26,8 +26,63 @@ class ScoreCard
   #   A strike or spare in the 10th frame unlocks a bonus roll, but scores 10 only.
 
   def self.full_score(score_card)
-    total_score = -1 # TODO: implement logic
+    score_frames = score_card.split.map{|frame| frame.split(//) }
+    score_frames = score_frames.map.with_index{|frame, i| transform_frame(frame, i) }
+    # puts "score_frames:#{score_frames}"
+
+    total_score = 0
+    # Adding [nil, nil] to add up the scores of the last 2 elements
+    (score_frames.flatten + [nil, nil]).each_cons(3) do |data|
+      current = data.first
+      result = if current[:frame_index] == 9
+        data.first[:score]
+      elsif current[:type] == :strike
+        data.take(3).sum{|d| d[:score] }
+      elsif current[:type] == :spare
+        data.take(2).sum{|d| d[:score] }
+      else
+        data.first[:score]
+      end
+      # puts "#{current} -> #{result}"
+      total_score += result
+    end
 
     return total_score
+  end
+
+  def self.transform_frame(frame, i)
+    transformed = frame.map.with_index do |str,j|
+      result =
+        case str
+        when 'X'
+          {
+            score: 10,
+            type: :strike
+          }
+        when '/'
+          {
+            score: 10 - frame[j-1].to_i,
+            type: :spare
+          }
+        when '-'
+          {
+            score: 0
+          }
+        else
+          {
+            score: str.to_i
+          }
+        end
+      result[:frame_index] = i
+
+      result
+    end
+
+    # Rescue exceptinal case of score mistake. e.g. '91'(supposed to be 9/)
+    if transformed.size == 2 && transformed.reject{|d| %i[strike spare].include?(d[:type]) }.sum{|d| d[:score] } == 10
+      transformed[1][:type] = :spare
+    end
+
+    transformed
   end
 end
