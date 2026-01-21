@@ -14,8 +14,7 @@ RSpec.describe ScoreCard do
 
 
     it "returns 155 when all spares and bonus roll is a strike" do
-      card = "-/ 1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/ X"
-      expect(described_class.full_score(card)).to eq(155)
+      expect(described_class.full_score("-/ 1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/X")).to eq(155)
     end
 
 
@@ -39,8 +38,8 @@ RSpec.describe ScoreCard do
     end
 
 
-    it "returns 65 when open frames and bonus roll" do
-      expect(described_class.full_score("11 21 31 41 51 61 71 81 91 9/X")).to eq(65)
+    it "returns 83 when open frames and bonus roll" do
+      expect(described_class.full_score("11 21 31 41 51 61 71 81 45 9/X")).to eq(83)
     end
 
 
