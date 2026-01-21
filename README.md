@@ -40,7 +40,7 @@ Branches:
    git clone https://github.com/mish-tan/TokyoRubyistMeetupBowlingChallenge.git
    ```
 
-2. **Install dependencies: Make sure you have Ruby installed, then run:**
+2. **Install dependencies: Make sure you have Ruby 4.x installed, then run:**
 
    ```
    bundle install
